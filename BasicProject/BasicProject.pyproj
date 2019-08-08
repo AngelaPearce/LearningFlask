@@ -28,6 +28,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="app.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="runserver.py" />
     <Compile Include="BasicProject\__init__.py" />
     <Compile Include="BasicProject\views.py" />
@@ -41,6 +44,9 @@
     <Folder Include="BasicProject\templates\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BasicProject\events.txt" />
+    <Content Include="BasicProject\static\data.json" />
+    <Content Include="BasicProject\templates\services.html" />
     <Content Include="requirements.txt" />
     <Content Include="BasicProject\static\content\bootstrap.css" />
     <Content Include="BasicProject\static\content\bootstrap.min.css" />

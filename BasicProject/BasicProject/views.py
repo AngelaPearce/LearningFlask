@@ -35,3 +35,21 @@ def about():
         year=datetime.now().year,
         message='Your application description page.'
     )
+
+@app.route('/services')
+def services():
+    """Renders the services page."""
+    fake_service = 'air supply'
+    fake_delivery = ' the atmosphere'
+    return render_template(
+        'services.html',
+        title='Services',
+        year=datetime.now().year,
+        message='Our services include: ' + fake_service + ' delivered via ' + fake_delivery
+    )
+
+@app.route('/api/data')
+def get_data():
+    return app.send_static_file('data.json')
+
+""" @app.route('/hello/<name>' incomplete) """
