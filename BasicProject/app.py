@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.

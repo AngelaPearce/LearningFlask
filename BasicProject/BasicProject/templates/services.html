@@ -5,4 +5,12 @@
 <h2>{{ title }}.</h2>
 <h3>{{ message }}</h3>
 
+<form action="\login" method="POST">
+    <label for="fname">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="lname">Password</label><br>
+    <input type="password" id="psw" name="psw">
+    <button type="submit">Submit</button>
+</form>
+
 {% endblock %}
