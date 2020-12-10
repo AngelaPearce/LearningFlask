@@ -3,7 +3,7 @@ Routes and views for the flask application.
 """
 
 from datetime import datetime
-from flask import render_template
+from flask import render_template, request
 from BasicProject import app
 
 @app.route('/')
@@ -15,6 +15,32 @@ def home():
         title='Home Page',
         year=datetime.now().year,
     )
+
+@app.route('/login', methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        cred_user = request.form["username"]
+        cred_pass = request.form["psw"]
+
+        if (cred_user == 'user') and (cred_pass == "pass"):
+            return render_template(
+                'services.html',
+                title='Services',
+                year=datetime.now().year,
+                message='Welcome: ' + cred_user)
+    else:
+        return render_template(
+            'services.html',
+            title='Services',
+            year=datetime.now().year,
+            message='Welcome: Please login.')
+
+    return render_template(
+        'services.html',
+        title='Services',
+        year=datetime.now().year,
+        message='Welcome: Please login.')
+
 
 @app.route('/contact')
 def contact():
